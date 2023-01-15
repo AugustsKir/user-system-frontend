@@ -1,0 +1,34 @@
+<body class="body">
+
+<section class="sign-up-section">
+  <div class="form-container">
+    <div *ngIf="userForm" [formGroup]="userForm" class="sign-up-form">
+      <div class="sign-up-box">
+        <h2 class="title">New User Form</h2>
+        <label class="label">Name</label>
+        <input
+          class="input"
+          formControlName="name"
+          id="name">
+        <label class="label" for="password">e-mail</label>
+        <input
+          class="input"
+          formControlName="email"
+          id="email"/>
+        <label class="label">Password</label>
+        <input
+          class="input"
+          formControlName="password"
+          id="password"/>
+        <label class="label">Age</label>
+        <input
+          class="input"
+          formControlName="age"
+          id="age"/>
+        <button (click)="sendData()" [disabled]="userForm.invalid" class="sign-up-button" mat-flat-button>Save User
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
