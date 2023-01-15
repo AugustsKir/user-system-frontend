@@ -6,7 +6,7 @@ import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing-module";
 import {UsersComponent} from './pages/users/users.component';
 import {HttpClientModule} from "@angular/common/http";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";

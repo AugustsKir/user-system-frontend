@@ -15,9 +15,13 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.findAll().subscribe((response) => {
-      console.log(response)
       this.users = response
     })
+  }
+
+  deleteUser(id: number): void {
+    this.service.deleteUser(id).subscribe()
+    window.location.reload()
   }
 
 }

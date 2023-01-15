@@ -1,49 +1,36 @@
 <body class="full-page">
 <section class="container">
   <div class="title-box">
-  <h1 class="title"> Saved Users</h1>
+    <h1 class="title"> Saved Users</h1>
   </div>
-  <div class="form-container">
-  <form class="example-form">
-
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Name</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>E-mail</mat-label>
-        <input matInput>
-      </mat-form-field></td>
-    </tr></table>
-
-    <p>
-      <mat-form-field class="example-full-width">
-        <mat-label>Age</mat-label>
-        <textarea matInput placeholder="example@gmail.com"></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-    </p>
-  </form>
+  <div class="card-container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title class="card-title"> Add New User</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">Add a new user by clicking on the button below</mat-card-content>
+      <mat-card-actions>
+        <div class="save-btn-container">
+          <button class="save-btn" mat-flat-button>Create User</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    <mat-card *ngFor="let user of users" class="card">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{user.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="card-content">Age: {{user.age}} <br>
+        E-mail: {{user.email}} <br>
+        User ID: {{user.userID}}
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="btns">
+          <button class="edit-btn" mat-flat-button>Edit User</button>
+          <button (click)="deleteUser(user.userID)" class="delete-btn" mat-flat-button>Delete User</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
   </div>
-<div class="card-container">
-  <mat-card class="card" *ngFor="let user of users">
-    <mat-card-header>
-    <mat-card-title class="card-title">{{user.name}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content class="card-content">Age: {{user.age}} <br>
-      E-mail: {{user.email}} <br>
-    User ID: {{user.userID}}
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-flat-button class="edit-btn">Edit User</button>
-      <button mat-flat-button class="delete-btn">Delete User</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
 </section>
 </body>
 

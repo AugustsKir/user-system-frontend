@@ -21,8 +21,7 @@ export class UserServiceService {
     return this.http.post<User>(this.userActionsURL, user)
   }
 
-  public deleteUser(user: User) {
-    // @ts-ignore
-    return this.http.delete<User>(this.userActionsURL, user)
+  public deleteUser(id: number) {
+    return this.http.delete(this.userActionsURL + '/' + id)
   }
 }
