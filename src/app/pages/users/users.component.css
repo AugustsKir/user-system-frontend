@@ -1,0 +1,79 @@
+.title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #f5efe7;
+}
+.title-box {
+  background-color: #445e9b;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  border-radius: 15px;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.container {
+  padding: 2rem;
+}
+.full-page {
+  background-color: #668bf7;
+}
+.form-container {
+  margin-left: 40rem;
+  margin-right: 40rem;
+}
+.card-container {
+  grid-template-columns: repeat(auto-fill, 20rem);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+}
+.card:hover {
+  box-shadow:
+    0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.13);
+}
+.card {
+  background-color: #445e9b;
+  margin: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+  max-width: 400px;
+  flex-direction: column;
+  display:flex;
+  color: #f5efe7;
+  transition: 0.2s ease-in-out;
+}
+.card-title {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+}
+.card-content {
+  margin: 1rem;
+  font-weight: 200
+}
+.edit-btn {
+  background-color: #6185d9;
+  margin: 0.2rem;
+  color: white;
+  font-weight: 100;
+  transition: 0.2s ease-in-out;
+}
+.delete-btn {
+  background-color: rgba(212, 63, 63, 0.93);
+  margin: 0.2rem;
+  color: white;
+  font-weight: 100;
+  transition: 0.2s ease-in-out;
+}
+.mat-flat-button:hover {
+  transform: scale(1.05);
+}
+
