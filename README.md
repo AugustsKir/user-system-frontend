@@ -16,3 +16,6 @@ ng serve
 ```
 4. Open *localhost:4200* on your browser
 
+## Preview
+
+![](https://github.com/AugustsKir/user-system-frontend/blob/master/example.gif)
