@@ -29,4 +29,8 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['users/new']);
   }
 
+  redirectToEdit(id: number): void {
+    this.router.navigate(['users/edit' + '/' + id])
+  }
+
 }

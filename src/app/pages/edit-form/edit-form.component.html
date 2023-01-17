@@ -1,32 +1,40 @@
-<body class="body">
-
+<body class="full-page">\
 <section class="sign-up-section">
   <div class="form-container">
     <div *ngIf="userForm" [formGroup]="userForm" class="sign-up-form">
       <div class="sign-up-box">
-        <h2 class="title">New User Form</h2>
+        <h2 class="title">Edit User</h2>
+        <h3 class="subtitle">User ID: {{user.userID}}</h3>
         <label class="label">Name</label>
         <input
+          [(ngModel)]="user.name"
           class="input"
           formControlName="name"
-          id="name">
+          id="name"
+        />
         <label class="label" for="password">e-mail</label>
         <input
+          [(ngModel)]="user.email"
           class="input"
           formControlName="email"
-          id="email"/>
+          id="email"
+        />
         <label class="label">Password</label>
         <input
+          [(ngModel)]="user.password"
           class="input"
           formControlName="password"
           id="password"
-          type="password"/>
+          type="password"
+        />
         <label class="label">Age</label>
         <input
+          [(ngModel)]="user.age"
           class="input"
           formControlName="age"
-          id="age"/>
-        <button (click)="sendData()" [disabled]="userForm.invalid" class="sign-up-button" mat-flat-button>Save User
+          id="age"
+        />
+        <button [disabled]="userForm.invalid" class="sign-up-button" mat-flat-button>Save Changes
         </button>
       </div>
     </div>

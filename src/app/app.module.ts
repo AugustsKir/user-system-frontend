@@ -13,12 +13,14 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {UserFormComponent} from './pages/user-form/user-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {EditFormComponent} from './pages/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
+    EditFormComponent
   ],
   imports: [
     MatCardModule,

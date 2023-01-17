@@ -24,4 +24,8 @@ export class UserServiceService {
   public deleteUser(id: number) {
     return this.http.delete(this.userActionsURL + '/' + id)
   }
+
+  public getUserByID(id: number) {
+    return this.http.get<User>(this.userActionsURL + '/' + id)
+  }
 }
