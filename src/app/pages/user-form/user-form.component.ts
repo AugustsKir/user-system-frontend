@@ -21,16 +21,19 @@ export class UserFormComponent implements OnInit {
 
   buildUserForm(): void {
     this.userForm = this.fb.group({
-      email: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      age: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+      name: ['', [Validators.required, Validators.pattern(/[a-zA-Z][a-zA-Z ]/)]],
+      age: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+      password: [''],
+      userID: ['']
     })
   }
 
   sendData(): void {
     this.service.saveUser(this.userForm?.value).subscribe()
-    this.router.navigate(['users']);
+    this.router.navigate(['users']).then(() => {
+      window.location.reload()
+    });
   }
 
 }

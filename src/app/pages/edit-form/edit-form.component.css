@@ -1,5 +1,7 @@
 .full-page {
   background-color: #668bf7;
+  height: auto;
+  min-height: 100%;
 }
 
 .title {

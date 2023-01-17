@@ -7,8 +7,9 @@ import {User} from "../models/user";
   providedIn: 'root'
 })
 export class UserServiceService {
-  userActionsURL = 'http://localhost:8080/api/user';
-  allUsersURL = 'http://localhost:8080/api/user/all'
+  userActionsURL: string = 'http://localhost:8080/api/user';
+  allUsersURL: string = 'http://localhost:8080/api/user/all';
+  updateUserURL: string = 'http://localhost:8080/api/user/update'
 
   constructor(private http: HttpClient) {
   }
@@ -27,5 +28,9 @@ export class UserServiceService {
 
   public getUserByID(id: number) {
     return this.http.get<User>(this.userActionsURL + '/' + id)
+  }
+
+  public updateUser(user: User) {
+    return this.http.post<User>(this.updateUserURL, user)
   }
 }

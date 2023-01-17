@@ -28,7 +28,7 @@ export class EditFormComponent implements OnInit {
 
   buildUserForm(): void {
     this.userForm = this.fb.group({
-      email: ['', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+      email: ['', [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
       name: ['', [Validators.required, Validators.pattern(/[a-zA-Z][a-zA-Z ]/)]],
       age: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
       password: [''],
@@ -37,8 +37,10 @@ export class EditFormComponent implements OnInit {
   }
 
   sendData(): void {
-    console.log(this.userForm?.value)
-    this.router.navigate(['users']);
+    this.service.updateUser(this.userForm?.value).subscribe()
+    this.router.navigate(['users']).then(() => {
+      window.location.reload()
+    });
   }
 
 }

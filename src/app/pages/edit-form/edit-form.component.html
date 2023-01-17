@@ -4,7 +4,14 @@
     <div *ngIf="userForm" [formGroup]="userForm" class="sign-up-form">
       <div class="sign-up-box">
         <h2 class="title">Edit User</h2>
-        <h3 class="subtitle">User ID: {{user.userID}}</h3>
+        <label class="label">User ID</label>
+        <input
+          [(ngModel)]="user.userID"
+          [readOnly]="true"
+          class="input"
+          formControlName="userID"
+          id="userID"
+        />
         <label class="label">Name</label>
         <input
           [(ngModel)]="user.name"
@@ -34,7 +41,7 @@
           formControlName="age"
           id="age"
         />
-        <button [disabled]="userForm.invalid" class="sign-up-button" mat-flat-button>Save Changes
+        <button (click)="sendData()" [disabled]="userForm.invalid" class="sign-up-button" mat-flat-button>Save Changes
         </button>
       </div>
     </div>
